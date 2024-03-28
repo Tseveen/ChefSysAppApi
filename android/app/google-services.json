@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "197839317602",
+    "project_id": "chefsys-cd440",
+    "storage_bucket": "chefsys-cd440.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197839317602:android:113820d44595bea3187f3b",
+        "android_client_info": {
+          "package_name": "com.example.chefsys_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBow0AAX0KM1V71VCYBJgQnkmfdoPwb8c4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
