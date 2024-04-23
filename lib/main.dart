@@ -1,6 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:chefsysproject/pages/login.dart';
-import 'package:chefsysproject/pages/notification.dart';
 import 'package:chefsysproject/theme/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -27,10 +26,6 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         nextScreen: Login(),
       ),
-      navigatorKey: navigatorKey,
-      routes: {
-        '/notification_screen': (context) => const NotificationPage(),
-      },
     );
   }
 }

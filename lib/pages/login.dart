@@ -36,23 +36,11 @@ class _LoginState extends State<Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Padding(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                child: Image(
-                  image: AssetImage('assets/logo.png'),
-                  height: 150,
-                ),
+              Image(
+                image: AssetImage('assets/Logo1.png'),
+                height: 200,
               ),
-              Text(
-                'ChefSys',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.tertiary,
-                  fontFamily: 'Indie',
-                  fontSize: 80.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10), // Add vertical spacing
+              const SizedBox(height: 0.1),
 
               reusableTextField(context, "Цахим хаяг", Icons.email, false,
                   _emailTextController),
@@ -93,8 +81,13 @@ class _LoginState extends State<Login> {
                 height: 10,
               ),
               ElevatedButton(
-                onPressed: _login, // Call login function
-                child: Text('Нэвтрэх'),
+                onPressed: _login,
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        Colors.green)), // Call login function
+                child: Text(
+                  'Нэвтрэх',
+                ),
               ),
               burtguuleh(),
 

@@ -1,42 +1,23 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
-  const ForgetPasswordPage({super.key});
-
   @override
   State<ForgetPasswordPage> createState() => _ForgetPasswordPageState();
 }
 
 class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
   final _emailTextController = TextEditingController();
+
   @override
   void dispose() {
     _emailTextController.dispose();
     super.dispose();
   }
 
-  Future passwordReset() async {
-    try {
-      await FirebaseAuth.instance
-          .sendPasswordResetEmail(email: _emailTextController.text.trim());
-          showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              content: Text('Нууц үг солих холбоос email уруу илгээгдлээ.'),
-            );
-          });
-    } on FirebaseAuthException catch (e) {
-      print(e);
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              content: Text(e.message.toString()),
-            );
-          });
-    }
+  void _resetPassword() {
+    // Implement password reset functionality here
+    String email = _emailTextController.text;
+    print('Reset password for email: $email');
   }
 
   @override
@@ -61,11 +42,13 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               controller: _emailTextController,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(12)),
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(12)),
+                  borderSide: BorderSide(color: Colors.blue),
+                  borderRadius: BorderRadius.circular(12),
+                ),
                 hintText: 'Цахим хаяг',
                 fillColor: Colors.grey[200],
                 filled: true,
@@ -74,7 +57,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
           ),
           SizedBox(height: 10),
           MaterialButton(
-            onPressed: passwordReset,
+            onPressed:
+                _resetPassword, // Call _resetPassword function when button is pressed
             child: Text('Нууц үг солих'),
             color: Colors.blueAccent,
           ),
